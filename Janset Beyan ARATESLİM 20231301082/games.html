@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Games</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="content">
+    <nav>
+        <ul>
+            <li><a href="index.html" title="Main Article Section">Main Page</a></li>
+            <li>
+                <input type="checkbox" id="portfolio-toggle" class="accordion-toggle" hidden>
+                <label for="portfolio-toggle" class="accordion-label" title="View Portfolio Sections">Portfolio</label>
+                <ul class="submenu">
+                    <li><a href="architecture.html" title="Architecture Projects">Architecture</a></li>
+                    <li><a href="art.html" title="Art Gallery and Illustrations">Art</a></li>
+                    <li><a href="games.html" title="Game Design Concepts">Games</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html" title="My Background and Contact">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    
+    <section>
+        <div class="article-body"> 
+            
+            <figure class="article-figure centered-feature">
+                <div class="comic-carousel">
+                    <input type="radio" name="slider" id="s1" checked>
+                    <input type="radio" name="slider" id="s2">
+                    <input type="radio" name="slider" id="s3">
+
+                    <div class="slides">
+                        
+                        <div class="slide">
+                            <img src="imajlar/Apartment of.png" alt="1">
+                            <input type="checkbox" id="d1" class="detail-toggle" hidden>
+                            <label for="d1" class="detail-label">Details 🗐</label>
+                            <div class="slide-details">
+                                <h3>Apartment of Freaks</h3>
+                                <p>Horor movie cliches themed dating sim, currently available on itch.io. My latest gamejam entry. You play as a college age sucubus, trying to 'capture the feelings' of your new neighbors in the apartment, who are designed after horror movie cliches. </p>
+                                <a href="apartment.html">See full project here.</a>
+                            </div>
+                        </div> 
+
+                        <div class="slide">
+                            <img src="imajlar/OjLjdU.png" alt="2">
+                            <input type="checkbox" id="d2" class="detail-toggle" hidden>
+                            <label for="d2" class="detail-label">Details 🗐</label>
+                            <div class="slide-details">
+                                <h3>Valere</h3>
+                                <p>First ever game design project I was a part of, made for a gamejam. Valere is a 2D to 3D style platformer. Available on itch.io.</p>
+                                <a href="valer.html">See full project page.</a>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <img src="imajlar/dy.png" alt="3">
+                            <input type="checkbox" id="d3" class="detail-toggle" hidden>
+                            <label for="d3" class="detail-label">Details 🗐</label>
+                            <div class="slide-details">
+                                <h3>Project:Riverbed</h3>
+                                <p>My current project, work in progress. A thriller mystery themed visual novel. Play as Rick, the generic angsty guy. After cutting almost all ties to your hometown you return for your childhood best friends funeral, until you start noticing the weirdness surrounding you.</p>
+                                <a href="dy.html">See full project page.</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav">
+                        <label for="s3" class="prev">❮</label>
+                        <label for="s1" class="prev">❮</label>
+                        <label for="s2" class="prev">❮</label>
+
+                        <label for="s2" class="next">❯</label>
+                        <label for="s3" class="next">❯</label>
+                        <label for="s1" class="next">❯</label>
+                    </div>
+                </div>
+            </figure>
+            
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

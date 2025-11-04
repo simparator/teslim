@@ -1,0 +1,414 @@
+/* Newspaper Vintage Typewriter Style */
+
+/* 1. Typewriter Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- SCROLLBAR CUSTOMIZATION (Invisible) --- */
+.content::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent;
+}
+.content {
+    scrollbar-width: none; 
+}
+/* -------------------------------------- */
+
+
+/* --- FIX: Disable scrolling on the main window/background --- */
+html, body {
+    height: 100%; 
+    overflow: hidden; 
+    overflow-x: hidden; 
+}
+
+body {
+    font-family: 'Special Elite', cursive; 
+    background: #f4f1e8 url('https://www.transparenttextures.com/patterns/old-wall.png'); 
+    color: #111; 
+    line-height: 1.6;
+    
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    width: 100%; 
+    
+    cursor: text; 
+}
+
+/* --- Main Content Container (The ONLY Scrolling Element) --- */
+.content {
+    width: 100%;
+    max-width: 1200px; 
+    
+    background-color: #fcf8e3; 
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); 
+    
+    padding: 40px;
+    
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+    height: 100vh; 
+    overflow-y: auto; 
+}
+
+/* --- Navigation (Simplified Writing Look) --- */
+nav {
+    border-bottom: none; 
+    padding-bottom: 5px; 
+    margin-bottom: 20px; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+}
+
+nav ul li {
+    position: relative; 
+    margin-bottom: 0; 
+}
+
+nav a, .accordion-label {
+    color: #111; 
+    text-decoration: none; 
+    font-weight: bold;
+    display: inline-block; 
+    padding: 8px 0; 
+    position: relative; 
+    cursor: pointer;
+    overflow: hidden; 
+    line-height: 1.2; 
+}
+
+/* REMOVED: Portfolio Hover name for cleaner navigation */
+.accordion-label:hover::before {
+    content: none; 
+}
+
+nav a:hover, .accordion-label:hover {
+    cursor: pointer;
+}
+
+/* --- Ink Smudge Hover Animation --- */
+nav a::after, .accordion-label::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; 
+    left: 0;
+    width: 100%; 
+    height: 6px; 
+    
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 C25 1 75 7 100 4' stroke='%23111111' stroke-width='3' fill='none' /%3E%3Cpath d='M0 3 C20 0 80 8 100 5' stroke='%23111111' stroke-width='2' fill='none' opacity='0.7' /%3E%3Cpath d='M0 5 C30 8 70 0 100 3' stroke='%23111111' stroke-width='2' fill='none' opacity='0.5' /%3E%3C/svg%3E") repeat-x center bottom;
+    background-size: auto 100%; 
+    
+    transform: translateX(-100%); 
+    transition: transform 0.4s ease-out; 
+    mix-blend-mode: multiply; 
+    opacity: 0.8; 
+}
+
+nav a:hover::after, .accordion-label:hover::after {
+    transform: translateX(0); 
+}
+
+/* --- Accordion Style Submenu (Top Nav) --- */
+.accordion-label::before {
+    content: none; 
+}
+
+.submenu {
+    position: absolute; 
+    top: 100%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    
+    background: #e6e0d3; 
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    border: 1px solid #111;
+    z-index: 20;
+    
+    display: flex; 
+    gap: 20px;
+    white-space: nowrap; 
+
+    max-height: 0; 
+    padding: 0 10px;
+    overflow: hidden;
+    visibility: hidden; 
+    opacity: 0; 
+    
+    transition: max-height 0.4s ease-in-out, 
+                padding 0.4s ease-in-out,
+                opacity 0.4s, 
+                visibility 0.4s;
+}
+
+.submenu a {
+    display: inline-block;
+    padding: 5px 0; 
+    font-size: 1em; 
+    color: #111; 
+}
+
+.accordion-toggle:checked + .accordion-label + .submenu {
+    max-height: 200px; 
+    padding: 10px; 
+    visibility: visible; 
+    opacity: 1; 
+}
+
+/* --- Classic Newspaper Masthead Styling --- */
+.headline {
+    font-size: 4.5rem; 
+    font-weight: 700;
+    letter-spacing: 5px; 
+    text-align: center;
+    text-transform: uppercase;
+    
+    border-bottom: 12px double #111; 
+    border-top: 4px solid #111; 
+    
+    padding-top: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 40px; 
+    line-height: 1; 
+}
+
+/* --- Article Body (Carousel Centering) --- */
+section {
+    background: transparent;
+    padding: 0;
+    border: none; 
+    border-top: 2px solid #111; 
+}
+
+.article-body {
+    column-count: 1; 
+    padding-top: 30px;
+    text-align: center; 
+}
+
+/* --- Image/Caption Styles --- */
+.article-figure {
+    overflow: hidden; 
+
+    margin: 20px auto 30px auto; 
+    text-align: center;
+    border-top: none; 
+    border-bottom: none; 
+    padding: 15px 0 10px 0;
+}
+
+.caption {
+    font-size: 0.85em; 
+    font-style: italic;
+    line-height: 1.4;
+    max-width: 800px; 
+    margin: 10px auto 0 auto;
+    text-align: center;
+}
+
+/* ======================================================= */
+/* --- CAROUSEL STYLES --- */
+/* ======================================================= */
+
+.comic-carousel {
+    position: relative;
+    width: 100%; 
+    max-width: 600px; 
+    height: 300px; 
+    margin: 0 auto; 
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    position: relative; 
+    overflow: visible; 
+}
+
+.slide {
+    position: absolute; 
+    top: 0;
+    left: 0; 
+    
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    transform-origin: center center;
+    border: none; 
+    box-sizing: content-box;
+    z-index: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Default hidden state (Start off-screen, scaled down) */
+.slide {
+    opacity: 0; 
+    transform: scale(0.8) translateX(150px); 
+}
+
+/* Show center image (current slide) */
+#s1:checked ~ .slides .slide:nth-child(1),
+#s2:checked ~ .slides .slide:nth-child(2),
+#s3:checked ~ .slides .slide:nth-child(3) {
+    opacity: 1;
+    transform: scale(1) translateX(0); /* Center position */
+    z-index: 3;
+}
+
+/* Previews - Left and Right */
+#s1:checked ~ .slides .slide:nth-child(2),
+#s2:checked ~ .slides .slide:nth-child(3),
+#s3:checked ~ .slides .slide:nth-child(1) {
+    opacity: 0.6;
+    transform: scale(0.8) translateX(200px); /* Right preview */
+    z-index: 2;
+}
+
+#s1:checked ~ .slides .slide:nth-child(3),
+#s2:checked ~ .slides .slide:nth-child(1),
+#s3:checked ~ .slides .slide:nth-child(2) {
+    opacity: 0.6;
+    transform: scale(0.8) translateX(-200px); /* Left preview */
+    z-index: 1;
+}
+
+input[type="radio"] { display: none; } /* Hides main carousel radio buttons */
+
+/* Navigation arrows */
+.nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.nav label {
+    cursor: pointer;
+    
+    color: #000000; 
+    padding: 10px 18px; 
+    border-radius: 50%; 
+    transition: background 0.3s, transform 0.2s;
+    font-size: 50px;
+    user-select: none;
+    line-height: 1;
+    border: none;
+}
+
+.nav label:hover {
+    transform: scale(1.05);
+}
+
+/* Position arrows near the edge of the content */
+.nav .prev {
+    position: absolute;
+    left: -50px; 
+}
+.nav .next {
+    position: absolute;
+    right: -50px;  
+}
+
+/* --- LOOP CONNECTIONS (Hidden Radio Buttons) --- */
+.nav label { display: none; }
+
+#s1:checked ~ .nav .prev[for="s3"],
+#s1:checked ~ .nav .next[for="s2"] { display: block; }
+
+#s2:checked ~ .nav .prev[for="s1"],
+#s2:checked ~ .nav .next[for="s3"] { display: block; }
+
+#s3:checked ~ .nav .prev[for="s2"],
+#s3:checked ~ .nav .next[for="s1"] { display: block; }
+
+
+/* ======================================================= */
+/* --- SLIDE DETAIL ACCORDION STYLES --- */
+/* ======================================================= */
+
+.detail-toggle {
+    display: none; 
+}
+
+/* Button to open details */
+.detail-label {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(17, 17, 17, 0.7);
+    color: #fcf8e3;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 5; 
+    transition: background 0.3s;
+}
+
+.detail-label:hover {
+    background: rgba(17, 17, 17, 0.9);
+}
+
+/* Accordion Panel */
+.slide-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: 0; 
+    padding: 0 15px; 
+    
+    background: rgba(240, 230, 210, 0.95); 
+    border-top: 2px solid #111;
+    overflow: hidden;
+    z-index: 4; 
+    
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+
+.slide-details h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.slide-details p {
+    font-size: 0.9em;
+    margin: 5px 0 10px 0;
+}
+
+.slide-details a {
+    color: #111;
+    text-decoration: underline;
+    font-size: 0.9em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* When the checkbox is checked, expand the panel */
+.detail-toggle:checked + .detail-label + .slide-details {
+    max-height: 300px; 
+    padding: 15px;
+}
+
