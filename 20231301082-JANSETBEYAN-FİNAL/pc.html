@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Janset Beyan Portfolio</title>
+  <link rel="stylesheet" href="pc.css">
+</head>
+<body>
+
+    
+
+
+<div class="console">
+   
+  <!-- ÜST EKRAN -->
+  <div class="screen top-screen">
+
+    <div class="menu-item" onclick="openAbout()">
+      <img src="imajlar/janset_user.png">
+      <span>ABOUT ME</span>
+    </div>
+
+    <!-- DARK / LIGHT TOGGLE -->
+    <div class="menu-item toggle" id="themeToggle">
+      <div class="toggle-box"></div>
+      <span class="toggle-text">DARK MODE</span>
+    </div>
+
+    <div class="menu-item" onclick="openPortfolio()">
+      <img src="imajlar/pngegg.png">
+      <span>PORTFOLIO</span>
+    </div>
+
+    <div class="menu-item main-btn" id="mainBtn">
+  <img src="imajlar/mail.png" alt="Main">
+  <span>Main</span>
+</div>
+
+
+  </div>
+
+  <!-- ALT EKRAN -->
+  <div class="screen bottom-screen" id="bottomScreen">
+    <p>Select an option above</p>
+  </div>
+
+  <!-- MİNİK MİKE -->
+  <img src="imajlar/minik_mike_oturur.png" id="mike" class="mike">
+
+  <div class="xp-bg"></div>
+<canvas id="crtCanvas"></canvas>
+
+
+</div>
+
+
+
+<script src="pc.js"></script>
+</body>
+</html>

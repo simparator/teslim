@@ -1,0 +1,128 @@
+/* ===============================
+   RESET
+=============================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+/* ===============================
+   BODY & BACKGROUND
+=============================== */
+body {
+  height: 100vh;
+  background: url("imajlar/background.jpg") center / cover no-repeat;
+  overflow: hidden;
+  color: #111;
+
+  /* intro animation */
+  animation: mobileIntro 0.6s ease-out both;
+}
+
+@keyframes mobileIntro {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+body.dark {
+  background: #0b0b0b;
+  color: #eee;
+}
+
+/* ===============================
+   BUTTONS
+=============================== */
+.mobile-buttons {
+  position: absolute;
+  bottom: 6%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 12px;
+}
+
+.mobile-btn {
+  width: 64px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.mobile-btn img {
+  width: 48px;
+  display: block;
+  margin: 0 auto 6px;
+}
+
+.mobile-btn span {
+  font-size: 11px;
+  color: #eee;
+}
+
+/* ===============================
+   DARK MODE TOGGLE (SQUARE)
+=============================== */
+.dark-toggle {
+  width: 22px;
+  height: 22px;
+  margin: 0 auto 6px;
+  border: 2px solid #eee;
+  background: transparent;
+}
+
+body.dark .dark-toggle {
+  background: #eee;
+}
+
+/* ===============================
+   NOTES (iOS SLIDE-UP)
+=============================== */
+.note {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, 30px);
+  width: 86%;
+  max-height: 60%;
+  background: #f4f3ec;
+  color: #111;
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  overflow-y: auto;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.note.open {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+body.dark .note {
+  background: #1a1a1a;
+  color: #eee;
+}
+
+.note h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.note p {
+  font-size: 13px;
+  line-height: 1.4;
+}
